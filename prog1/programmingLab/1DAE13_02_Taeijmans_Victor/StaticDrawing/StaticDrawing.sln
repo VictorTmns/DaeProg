@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StaticDrawing", "StaticDrawing.vcxproj", "{4775A420-5753-40EC-BCDF-724B6ACFC046}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4775A420-5753-40EC-BCDF-724B6ACFC046}.Debug|x64.ActiveCfg = Debug|x64
+		{4775A420-5753-40EC-BCDF-724B6ACFC046}.Debug|x64.Build.0 = Debug|x64
+		{4775A420-5753-40EC-BCDF-724B6ACFC046}.Debug|x86.ActiveCfg = Debug|Win32
+		{4775A420-5753-40EC-BCDF-724B6ACFC046}.Debug|x86.Build.0 = Debug|Win32
+		{4775A420-5753-40EC-BCDF-724B6ACFC046}.Release|x64.ActiveCfg = Release|x64
+		{4775A420-5753-40EC-BCDF-724B6ACFC046}.Release|x64.Build.0 = Release|x64
+		{4775A420-5753-40EC-BCDF-724B6ACFC046}.Release|x86.ActiveCfg = Release|Win32
+		{4775A420-5753-40EC-BCDF-724B6ACFC046}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDFD12B8-C904-476C-B3C4-2DE60A483653}
+	EndGlobalSection
+EndGlobal
