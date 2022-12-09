@@ -16,6 +16,8 @@ void Draw()
 	DrawTriangles();
 	DrawPentagrams();
 	DrawLineairGradients();
+	DrawDotGrids();
+
 }
 
 void Update(float elapsedSec)
@@ -113,7 +115,7 @@ void DrawConcentricSquare(const float bottom, float left, float size, int number
 		DrawRect(bottom + i * padding/2, left + i * padding/2, size - i * padding, size - i * padding);
 	}
 }
-void DrawConcentricSquare(Point2f leftBottomPos, float size, int numberOfSquares)
+void DrawConcentricSquare(const Point2f& leftBottomPos, float size, int numberOfSquares)
 {
 	DrawConcentricSquare(leftBottomPos.x, leftBottomPos.y, size, numberOfSquares);
 }
@@ -175,7 +177,7 @@ void DrawPentagrams()
 	SetColor(blue);
 	DrawPentagram(Point2f(320.f, 280.f), 20.f);
 }
-void DrawPentagram(const Point2f centerPos, float radius)
+void DrawPentagram(const Point2f& centerPos, float radius)
 {
 	float pi = 3.1415f;
 	Point2f point1(centerPos.x + radius * cosf(0 / pi*2), centerPos.y + radius * sinf(0 / pi*2));
@@ -197,7 +199,7 @@ void DrawLineairGradients()
 	DrawLineairGradient(Point2f(10.f, 200.f), 280.F, 35.f, Color4f(RgbToColor4f(121, 120, 35)), Color4f(RgbToColor4f(236, 128, 122)));
 	DrawLineairGradient(Point2f(10.f, 155.f), 380.F, 35.f, Color4f(RgbToColor4f(0, 0, 255)), Color4f(RgbToColor4f(255, 0, 0, 0)));
 }
-void DrawLineairGradient(const Point2f leftBottomPos, float width, float height, Color4f startColor, Color4f finalColor)
+void DrawLineairGradient(const Point2f& leftBottomPos, float width, float height, const Color4f& startColor, const Color4f& finalColor)
 {
 	Color4f colorIncrement((finalColor.r - startColor.r) / width, (finalColor.g - startColor.g) / width, 
 						   (finalColor.b - startColor.b) / width, (finalColor.a - startColor.a) / width);
@@ -210,7 +212,25 @@ void DrawLineairGradient(const Point2f leftBottomPos, float width, float height,
 		FillRect(leftBottomPos.x + i, leftBottomPos.y, 1.f, height);
 	}
 }
-Color4f RgbToColor4f(float r, float g, float b, float a) {
-	return Color4f(r / 255, g / 255, b / 255, a / 255);
+
+void DrawDotGrids()
+{
+	DrawDotGrid(Point2f(5.f, 30.f), 10.f, 2.f, 5, 3, Color4f(1.f, 0.f, 0.f, 1.f));
+	DrawDotGrid(Point2f(130.f, 52.f), 10.f, 2.f, 7, 2, Color4f(0.f, 1.f, 0.f, 1.f));
+	DrawDotGrid(Point2f(135.f, 57.f), 5.f, 12.f, 7, 2, Color4f(0.f, 0.f, 1.f, 1.f));
+}
+void DrawDotGrid(const Point2f& leftBottomPos, const float radiusDots, const float margin, const int numberOfDotsHorizontal, const int numberOfDotsVertical, const Color4f& color)
+{
+	float pi{ 3.1415f };
+	SetColor(color);
+	for (int i = 0; i < numberOfDotsHorizontal; i++)
+	{
+		for (int y = 0; y < numberOfDotsVertical; y++)
+		{
+			Point2f pos(Point2f(leftBottomPos.x + margin * i + radiusDots + radiusDots * i * 2,
+				leftBottomPos.y + margin * y + radiusDots + radiusDots * y * 2));
+			FillEllipse(pos, radiusDots, radiusDots);
+		}
+	}
 }
 #pragma endregion ownDefinitions

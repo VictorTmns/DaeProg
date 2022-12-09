@@ -16,16 +16,17 @@ float g_WindowHeight{ 400 };
 
 // Declare your own functions here
 void DrawSquares();
-void DrawConcentricSquare(const Point2f leftBottomPos, float size, int numberOfSquares);
+void DrawConcentricSquare(const Point2f& leftBottomPos, float size, int numberOfSquares);
 void DrawConcentricSquare(float bottom, float left, float size, int numberOfSquares);
 void DrawTriangles();
-void DrawEquilateralTriangle(const Point2f leftBottomPos, float verticesSize, bool isFilled = false);
+void DrawEquilateralTriangle(const Point2f& leftBottomPos, float verticesSize, bool isFilled = false);
 void DrawEquilateralTriangle(float bottom, float left, float verticesSize, bool isFilled = false);
 void DrawPentagrams();
-void DrawPentagram(const Point2f centerPos, float radius);
+void DrawPentagram(const Point2f& centerPos, float radius);
 void DrawLineairGradients();
-void DrawLineairGradient(const Point2f leftBottomPos, float width, float height, Color4f startColor, Color4f finalColor);
-Color4f RgbToColor4f(float r, float g, float b, float a = 255);
+void DrawLineairGradient(const Point2f& leftBottomPos, float width, float height, const Color4f& startColor, const Color4f& finalColor);
+void DrawDotGrids();
+void DrawDotGrid(const Point2f& leftBottomPos, const float radiusDots, const float margin,  const int numberOfDotsHorizontal, const int numberOfDotsVertical, const Color4f& color);
 #pragma endregion ownDeclarations
 
 #pragma region gameFunctions											

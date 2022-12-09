@@ -12,9 +12,9 @@ struct Point2f {
 
 void TestSum(const int number1, const int number2);
 int Sum(const int number1, const int number2);
-void Print(unsigned int value, char delimiter);
-void Print(char value, char delimiter);
-void Print(float value, char delimiter);
+void Print(unsigned int value, char delimiter = ' ');
+void Print(char value, char delimiter = ' ');
+void Print(float value, char delimiter = ' ');
 void TestPrint();
 void TestMultiply();
 int Multiply(const int number1, const int number2);
@@ -47,7 +47,7 @@ int main()
 	srand(int(time(NULL)));
 	//TestSum(29, 8);
 	//std::cout << Sum(10, 7);
-	//TestPrint();
+	TestPrint();
 	//TestMultiply();
 	//TestModulo();
 	//TestPrintNumbers();
@@ -56,7 +56,7 @@ int main()
 	//TestIsEven();
 	//TestIsLeapYear();
 	//TestGetRand();
-	TestGetDistance();
+	//TestGetDistance();
 }
 
 void TestSum(const int number1, const int number2) {
@@ -81,7 +81,7 @@ void Print(float value, char delimiter)
 }
 void TestPrint()
 {
-	Print('a', ',');
+	Print('a');
 	Print(20, ',');
 	Print(20.0f, ',');
 }
